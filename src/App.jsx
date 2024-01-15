@@ -1,14 +1,20 @@
-import { useState } from 'react'
-import './App.css'
+import "./App.css";
+
+// import Components
+import Header from "./components/Header.jsx";
+import TodosContainer from "./components/TodosContainer.jsx";
+import DonesContainer from "./components/DonesContainer.jsx";
+
+// import context
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-     
+      <Header />
+      <TodosContainer />
+      <DonesContainer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
