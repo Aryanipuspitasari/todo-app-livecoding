@@ -21,7 +21,7 @@ function App() {
   ];
 
   const [tasks, setTasks] = useState(tasksArr);
-  
+
   const addItem = (value) => {
 
     const newItem = {
@@ -52,10 +52,17 @@ function App() {
 
   };
 
+
+  const todos = tasks.filter((task) => !task.done);
+  const dones = tasks.filter((task) => task.done)
+
   return (
     <div className="app">
       <Header />
-      <TodosContainer />
+      <TodosContainer 
+      items = {todos} 
+      handleAddTodo = {addItem} 
+      handleChangeStatus = {updateItem}/>
       <DonesContainer />
     </div>
   );
