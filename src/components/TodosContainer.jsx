@@ -5,10 +5,12 @@ const TodosContainer = ({ items, handleAddTodo, handleChangeStatus }) => {
 
   function handleSubmit(event) {
     event.preventDefault();
-    console.log(event);
+    // console.log(event);
 
-    handleAddTodo(event.target.elements.text.value);
-    event.target.elements.text.value = "";
+    let inputValue = event.target.elements.text.value;
+
+    handleAddTodo(inputValue);
+    inputValue = "";
   }
 
   return (

@@ -9,18 +9,18 @@ import DonesContainer from "./components/DonesContainer.jsx";
 // import context
 
 function App() {
-  const tasksArr = [
-    { id: 0, text: "Wash my face!", done: false },
-    { id: 1, text: "Walk the dog", done: false },
-    { id: 2, text: "Pay the rent", done: false },
-    { id: 3, text: "Make so moneys", done: false },
-    { id: 4, text: "Make a website", done: true },
-    { id: 5, text: "Call my mom", done: true },
-    { id: 6, text: "Finish reading my book", done: true },
-    { id: 7, text: "Make more moneys", done: true },
-  ];
+  // const tasksArr = [
+  //   { id: 0, text: "Wash my face!", done: false },
+  //   { id: 1, text: "Walk the dog", done: false },
+  //   { id: 2, text: "Pay the rent", done: false },
+  //   { id: 3, text: "Make so moneys", done: false },
+  //   { id: 4, text: "Make a website", done: true },
+  //   { id: 5, text: "Call my mom", done: true },
+  //   { id: 6, text: "Finish reading my book", done: true },
+  //   { id: 7, text: "Make more moneys", done: true },
+  // ];
 
-  const [tasks, setTasks] = useState(tasksArr);
+  const [tasks, setTasks] = useState([]);
 
   const addItem = (value) => {
 
@@ -38,7 +38,7 @@ function App() {
   
   const updateItem = (id) => {
 
-    const updatedItem = tasksArr.map((item) => {
+    const updatedItem = tasks.map((item) => {
       if(item.id === id){
         item.done = !item.done
 
@@ -63,7 +63,9 @@ function App() {
       items = {todos} 
       handleAddTodo = {addItem} 
       handleChangeStatus = {updateItem}/>
-      <DonesContainer />
+      <DonesContainer 
+      items = {dones}
+      handleChangeStatus = {updateItem}/>
     </div>
   );
 }
