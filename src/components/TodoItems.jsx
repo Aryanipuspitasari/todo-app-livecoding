@@ -1,7 +1,7 @@
 const TodoItems = ({ item, handleChangeStatus }) => {
 
     return (
-        <div>
+        <div className="item">
 
         <p>{item.text}</p>
         <button onClick={() => handleChangeStatus(item.id)}>&#10004;</button>

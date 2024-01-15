@@ -7,10 +7,8 @@ const TodosContainer = ({ items, handleAddTodo, handleChangeStatus }) => {
     event.preventDefault();
     // console.log(event);
 
-    let inputValue = event.target.elements.text.value;
-
-    handleAddTodo(inputValue);
-    inputValue = "";
+    handleAddTodo(event.target.elements.text.value);
+    event.target.elements.text.value = "";
   }
 
   return (
